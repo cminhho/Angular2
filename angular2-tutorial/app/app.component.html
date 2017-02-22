@@ -1,76 +1,13 @@
 <h1>Routing</h1>
 <hr>
 
-<a [routerLink]="/home">Home</a>
-<a [routerLink]="/about">About Us</a>
-<a [routerLink]="/news">News</a>
+<a [routerLink]="['/home']">Home</a>
+<a [routerLink]="['/about']">About Us</a>
+<a [routerLink]="['/news', {id1: 123, id2: abc}]">News</a>
 <hr>
-<router-outlet>The content of routing will be shown here: </router-outlet>
+<div>The content of routing will be shown here: </div>
+<router-outlet></router-outlet>
 <hr>
 <footer>
 	Copyright @ 2017
 <footer>
-
-<h1>Hello {{app}}!</h1>
-<hr>
-<a (click)="onClick($event)">click me</a>
-<h3>{{clickedItem}} is clicked</h3>
-
-<hr>
-<h2>User Infomation</h2>
-<div><b>FullName</b>: {{fullName}}</div>
-<div><b>Phone Number</b>: {{phoneNumber}}</div>
-<div><b>Active</b>: {{active}}</div>
-
-<hr>
-<h2>Product Infomation</h2>
-<div><b>ID</b>: {{product.id}}</div>
-<div><b>Name</b>: {{product.name}}</div>
-<div><b>Price</b>: {{product.price}}</div>
-
-<hr>
-<h2>Product List</h2>
-<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-<table style="width:100%">
-	<tr>
-		<th>ID</th>
-		<th>Name</th>
-		<th>Price</th>
-	</tr>
-	<tr *ngFor="let product of products">
-		<td>
-			<a (click)="onItemClicked(product)">{{product.id}}</a>
-		</td>
-		<td>
-			{{product.name}}
-		</td>
-		<td>
-			{{product.price}}
-		</td>
-	</tr>
-</table>
-
-<hr>
-<h2>Data Display</h2>
-{{display1()}}
-{{display2('ABC')}}
-<input type="button" value="Click me" (click)="clickMe($event)"/>
-
-<hr>
-<h2>Binding User Input</h2>
-Change input to see binding data using <b>ngModel</b>: <input type="text" [(ngModel)]="selectedItem"/>
-<span>{{selectedItem}}</span>
-
-<div>
-	User Input from $event Object <b>keyup</b>: <input type="text" (keyup)="display3($event)"/>
-	{{result}}
-</div>
-
-<div>
-	User Input from $event Object <b>keyup.enter</b>: <input type="text" (keyup.enter)="display3($event)"/>
-	{{result}}
-</div>

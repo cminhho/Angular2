@@ -12,6 +12,13 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 // importing app components
 var app_component_1 = require("./app.component");
+var home_component_1 = require("./modules/home/home.component");
+var about_component_1 = require("./modules/about/about.component");
+var news_component_1 = require("./modules/news/news.component");
+// importing routing module
+var app_routes_1 = require("./app.routes");
+// importing app services
+var service1_service_1 = require("./_services/service1.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,12 +30,18 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             forms_1.ReactiveFormsModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            app_routes_1.ROUTING
         ],
         declarations: [
-            app_component_1.AppComponent
+            app_component_1.AppComponent,
+            home_component_1.HomeComponent,
+            about_component_1.AboutComponent,
+            news_component_1.NewsComponent
         ],
-        providers: [],
+        providers: [
+            service1_service_1.Service1
+        ],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

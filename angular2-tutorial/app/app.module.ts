@@ -10,12 +10,19 @@ import { HomeComponent } 						from './modules/home/home.component';
 import { AboutComponent } 						from './modules/about/about.component';
 import { NewsComponent } 						from './modules/news/news.component';
 
+// importing routing module
+import { ROUTING } 								from './app.routes'
+
+// importing app services
+import { Service1 } 							from './_services/service1.service'
+
 @NgModule({
     imports: [
         BrowserModule,
 		FormsModule,
         ReactiveFormsModule ,
-        HttpModule
+        HttpModule,
+		ROUTING
     ],
     declarations: [
 		AppComponent,
@@ -24,7 +31,7 @@ import { NewsComponent } 						from './modules/news/news.component';
 		NewsComponent
     ],
     providers: [
-
+		Service1
     ],
     bootstrap: [AppComponent]
 })
